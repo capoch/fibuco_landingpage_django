@@ -1,0 +1,34 @@
+body {
+  min-height: 2000px;
+}
+
+.navbar-static-top {
+  margin-bottom: 19px;
+  background: #016c8c !important;
+  color: #fff;
+
+}
+
+ .navbar-default .navbar-brand {
+   color:#fff !important;
+ }
+
+ .navbar-default .navbar-brand:hover {
+   color:#fff !important;
+ }
+
+.navbar-default .navbar-nav>li>a:hover {
+    color: white !important;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: transparent !important;
+}
+
+.navbar-toggle {
+    background-color: #016c8c !important;
+}
+
+.text-align-center {
+  text-align: center;
+}
