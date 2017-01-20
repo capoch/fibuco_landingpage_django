@@ -19,12 +19,13 @@
 </style>
 
 {% block jumbotron %}
+{% if not user.is_authenticated %}
 <!-- Main component for a primary marketing message or call to action -->
 <div class="jumbotron">
   <div class="container">
     <div class="row">
       <div class='col-sm-6'>
-        <h1>IT/Business Consulting</h1>
+        <h1>IT- &amp; Business Consulting</h1>
         <p>Helping you getting your IT projects set up right to suit your business needs.</p>
         <p>To see the difference between static and fixed top navbars, just scroll.</p>
         <p>
@@ -37,10 +38,19 @@
     </div>
   </div>
 </div>
+{% endif %}
 {% endblock %}
 
 
 {% block content %}
+{% if user.is_authenticated %}
+<h1>You are logged in</h1>
+
+  {% if queryset %}
+  <h2>List of Sign-Ups</h2>
+  {% endif %}
+
+{% else %}
 <div class="row">
   <div class="col-sm-3 pull-right">
 
@@ -52,16 +62,33 @@
     </form>
   </div>
   <div class='col-sm-3'>
-    <p class="lead text-align-center">Built with Django &amp; Bootstrap</p>
+    <p class="lead text-align-center">Django &amp; Bootstrap</p>
     <img src="{% static 'img/bootstrap.png' %}" class="img-responsive"/>
   </div>
   <div class='col-sm-3'>
-    <p class="lead text-align-center">Following industry standard best practices</p>
+    <p class="lead text-align-center">Following best practices</p>
     <img src="{% static 'img/best-practices.png' %}" class="img-responsive"/>
   </div>
   <div class='col-sm-3'>
     <p class="lead text-align-center">Always Open Source</p>
-    <img src="{% static 'img/open_source.jpg' %}" class="img-responsive"/>
+    <img src="{% static 'img/open_source.png' %}" class="img-responsive"/>
   </div>
 </div>
+{% endif %}
+{% if user.is_staff %}
+<table class="table">
+  <tr>
+    <th>Name</th>
+    <th>E-Mail</th>
+    <th>Created</th>
+  </tr>
+  {% for signee in queryset %}
+  <tr>
+    <td>{{signee.full_name}}</td>
+    <td>{{signee.email}}</td>
+    <td>{{signee.timestamp|timesince}}</td>
+    </tr>
+  {% endfor %}
+</table>
+{% endif %}
 {% endblock %}
