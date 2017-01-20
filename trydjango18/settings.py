@@ -143,5 +143,7 @@ MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static", "media_root")
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 #Registration Redux Settings
-ACCOUNT_ACTIVATION_DAYS=7
-REGISTRATION_AUTO_LOGIN=True
+ACCOUNT_ACTIVATION_DAYS = 7
+REGISTRATION_AUTO_LOGIN = True
+SITE_ID = 1 #since registration uses django.contrib.sites this has to be specified
+LOGIN_REDIRECT_URL = '/'
