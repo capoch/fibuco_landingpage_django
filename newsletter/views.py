@@ -29,9 +29,11 @@ def home(request):
 
 def contact(request):
     form = ContactForm(request.POST or None)
+    title_align_center = True
     context = {
         "title":"Contact Form",
-        "form":form
+        "form":form,
+        "title_align_center":title_align_center,
 
     }
     if form.is_valid():

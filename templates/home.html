@@ -3,22 +3,28 @@
 
 {% block head-title %}Welcome | {% endblock %}
 
+<style>
+{% block style %}
+
+
+{% endblock %}
+</style>
 
 {% block jumbotron %}
 <!-- Main component for a primary marketing message or call to action -->
 <div class="jumbotron">
   <div class="row">
-  <div class='col-sm-6'>
-  <h1>IT/Business Consulting</h1>
-  <p>Helping you getting your IT projects set up right to suit your business needs.</p>
-  <p>To see the difference between static and fixed top navbars, just scroll.</p>
-  <p>
+    <div class='col-sm-6'>
+      <h1>IT/Business Consulting</h1>
+      <p>Helping you getting your IT projects set up right to suit your business needs.</p>
+      <p>To see the difference between static and fixed top navbars, just scroll.</p>
+      <p>
+        <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">Learn more! &raquo;</a>
+      </p>
   </div>
   <div class='col-sm-6' style="background-color:black;height:300px">
   </div>
-  </div>
-    <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">Learn more! &raquo;</a>
-  </p>
+</div>
 </div>
 {% endblock %}
 
@@ -35,13 +41,13 @@
     </form>
   </div>
   <div class='col-sm-3'>
-    <p class="lead">Built with Django &amp; Bootstrap</p>
+    <p class="lead text-align-center">Built with Django &amp; Bootstrap</p>
   </div>
   <div class='col-sm-3'>
-    <p class="lead">Be passionate about what you do!</p>
+    <p class="lead text-align-center">Be passionate about what you do!</p>
   </div>
   <div class='col-sm-3'>
-    <p class="lead">Always Open Source</p>
+    <p class="lead text-align-center">Always Open Source</p>
   </div>
 </div>
 {% endblock %}
