@@ -1,11 +1,19 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
 {% load crispy_forms_tags %}
 
 {% block head-title %}Welcome | {% endblock %}
 
 <style>
 {% block style %}
+.navbar-static-top{
+  margin-bottom: 0px !important;
 
+}
+.jumbotron {
+  background-color: #016c8c;
+  color:#fff;
+}
 
 {% endblock %}
 </style>
@@ -13,18 +21,21 @@
 {% block jumbotron %}
 <!-- Main component for a primary marketing message or call to action -->
 <div class="jumbotron">
-  <div class="row">
-    <div class='col-sm-6'>
-      <h1>IT/Business Consulting</h1>
-      <p>Helping you getting your IT projects set up right to suit your business needs.</p>
-      <p>To see the difference between static and fixed top navbars, just scroll.</p>
-      <p>
-        <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">Learn more! &raquo;</a>
-      </p>
+  <div class="container">
+    <div class="row">
+      <div class='col-sm-6'>
+        <h1>IT/Business Consulting</h1>
+        <p>Helping you getting your IT projects set up right to suit your business needs.</p>
+        <p>To see the difference between static and fixed top navbars, just scroll.</p>
+        <p>
+          <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">Learn more! &raquo;</a>
+        </p>
+      </div>
+      <div class='col-sm-6'>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/mq508HXzccI" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
   </div>
-  <div class='col-sm-6' style="background-color:black;height:300px">
-  </div>
-</div>
 </div>
 {% endblock %}
 
@@ -42,12 +53,15 @@
   </div>
   <div class='col-sm-3'>
     <p class="lead text-align-center">Built with Django &amp; Bootstrap</p>
+    <img src="{% static 'img/bootstrap.png' %}" class="img-responsive"/>
   </div>
   <div class='col-sm-3'>
-    <p class="lead text-align-center">Be passionate about what you do!</p>
+    <p class="lead text-align-center">Following industry standard best practices</p>
+    <img src="{% static 'img/best-practices.png' %}" class="img-responsive"/>
   </div>
   <div class='col-sm-3'>
     <p class="lead text-align-center">Always Open Source</p>
+    <img src="{% static 'img/open_source.jpg' %}" class="img-responsive"/>
   </div>
 </div>
 {% endblock %}
